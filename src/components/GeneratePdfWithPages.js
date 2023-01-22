@@ -12,9 +12,10 @@ function GeneratePdfWithPages() {
   const [pdfDoc, setPdfDoc] = useState();
 
   const handleDownloadePdfPages = () => {
-    setPdfDoc(new jsPDF());
 
+    setPdfDoc(new jsPDF());
     const totalPages = "{total_pages_count_string}";
+    pdfDoc.page = 1;
     pdfDoc.text("Report", 15, 10);
 
 
@@ -59,6 +60,9 @@ function GeneratePdfWithPages() {
         );
       },
     });
+    if (typeof pdfDoc.putTotalPages === "function") {
+      pdfDoc.putTotalPages(totalPages);
+    }
 
     pdfDoc.save("pageNo.pdf");
   };

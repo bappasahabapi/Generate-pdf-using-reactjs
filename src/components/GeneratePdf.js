@@ -1,6 +1,6 @@
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-import { useState } from "react";
+// import { useState } from "react";
 import {
   firstTableData,
   firstTableColumns,
@@ -9,13 +9,14 @@ import {
 } from "../components/utils/utils";
 
 function GeneratePdf() {
-  const [pdfDoc, setPdfDoc] = useState();
+  // const [pdfDoc, setPdfDoc] = useState();
 
   const handleDownloadePDF = () => {
-    setPdfDoc(new jsPDF());
-    // const pdfDoc = new jsPDF();
+    // setPdfDoc(new jsPDF());
 
+    const pdfDoc = new jsPDF();
     const totalPages = "{total_pages_count_string}";
+    pdfDoc.page = 1;
     pdfDoc.text("Report", 15, 10);
 
     pdfDoc.autoTable({
@@ -90,6 +91,10 @@ function GeneratePdf() {
         );
       },
     });
+
+    if (typeof pdfDoc.putTotalPages === "function") {
+      pdfDoc.putTotalPages(totalPages);
+    }
 
     pdfDoc.save("withoutPageNo.pdf");
   };
