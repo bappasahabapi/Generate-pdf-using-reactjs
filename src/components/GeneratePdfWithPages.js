@@ -2,8 +2,8 @@ import jsPDF from "jspdf";
 import "jspdf-autotable";
 import { useState } from "react";
 import {
-  firstTableData,
-  firstTableColumns,
+  // firstTableData,
+  // firstTableColumns,
   secondTableColumns,
   secondTableData,
 } from "../components/utils/utils";
