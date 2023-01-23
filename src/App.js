@@ -8,13 +8,14 @@ import GeneratePdfWithPages from './components/GeneratePdfWithPages';
 function App() {
   return (
     <div className="App">
-      <ExcelSheetData/>
-      {/* <GenerateExcel/> */}
-      <hr></hr>
-      <GeneratePdf/>
+     
+      <GenerateExcel/>
       <hr></hr>
       <GeneratePdfWithPages/>
       <hr></hr>
+       <ExcelSheetData/>
+       <hr></hr>
+      <GeneratePdf/>
     </div>
   );
 }

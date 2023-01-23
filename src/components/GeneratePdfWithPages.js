@@ -69,6 +69,7 @@ function GeneratePdfWithPages() {
   return (
     <div>
       <h2>Showing the GeneratePdfWithPages component for generating pdf</h2>
+      <h3 style={{color:'salmon'}}>🔥 PDF Using documentation🔥</h3>
       <h1>
         <button onClick={handleDownloadePdfPages}>Click ➡️ Generate PDF with pages</button>
       </h1>
